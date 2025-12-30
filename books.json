@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "title": "Tomorrow, and Tomorrow, and Tomorrow",
+    "author": "Gabrielle Zevin",
+    "pages": 416,
+    "rating": 5,
+    "blurb": "Devastating and beautiful. Made me cry.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593321201-M.jpg",
+    "year": 2025,
+    "dateAdded": "2025-12-30T03:40:00Z"
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "pages": 476,
+    "rating": 4,
+    "blurb": "Fun space adventure, though not as good as The Martian.",
+    "coverUrl": null,
+    "year": 2025,
+    "dateAdded": "2025-12-30T04:00:00Z"
+  }
+]
