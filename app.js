@@ -42,6 +42,9 @@ function switchYear(year) {
     currentYear = year;
     displayBooks(year);
     
+    // Update year display
+    document.getElementById('currentYearDisplay').textContent = year;
+    
     // Update active tab
     document.querySelectorAll('.year-tab').forEach(tab => {
         tab.classList.remove('active');
@@ -55,6 +58,9 @@ function switchYear(year) {
 function displayBooks(year) {
     const yearBooks = allBooks.filter(book => book.year === year);
     const booksGrid = document.getElementById('booksGrid');
+    
+    // Update year display
+    document.getElementById('currentYearDisplay').textContent = year;
     
     // Update stats
     updateStats(yearBooks);
@@ -85,15 +91,13 @@ function displayBooks(year) {
     `).join('');
 }
 
-// Render stars with alternating colors
+// Render stars - all red
 function renderStars(rating) {
-    const colors = ['pink', 'purple'];
     let stars = '<span class="stars">';
     
     for (let i = 1; i <= 5; i++) {
         if (i <= rating) {
-            const colorIndex = (i - 1) % 2; // Alternate between pink and purple
-            stars += `<span class="star filled-${colors[colorIndex]}">★</span>`;
+            stars += `<span class="star filled-pink">★</span>`;
         } else {
             stars += '<span class="star empty">★</span>';
         }

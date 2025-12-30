@@ -6,8 +6,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #F2F0EF;
-    color: #222;
+    background: #FEB3BA;
+    color: #DFACE5;
     line-height: 1.6;
 }
 
@@ -19,16 +19,23 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family: "BBH Bartle", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #DFACE5;
+}
+
+/* Current Year Display */
+.current-year {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #DFACE5;
+    margin-bottom: 20px;
 }
 
 /* Stats Section */
@@ -46,17 +53,14 @@ h1 {
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #DFACE5;
 }
 
 .stat-label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #666;
+    color: #DFACE5;
     margin-top: 5px;
 }
 
@@ -71,13 +75,13 @@ h1 {
 
 .year-tab {
     padding: 10px 24px;
-    background: #fff;
+    background: #DFACE5;
     border: none;
-    border-radius: 25px;
+    border-radius: 0;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    color: #222;
+    color: #FEB3BA;
     transition: all 0.3s ease;
 }
 
@@ -87,8 +91,8 @@ h1 {
 }
 
 .year-tab.active {
-    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
-    color: white;
+    background: #FEB3BA;
+    color: #DFACE5;
 }
 
 /* Books Grid */
@@ -99,8 +103,8 @@ h1 {
 }
 
 .book-card {
-    background: #fff;
-    border-radius: 12px;
+    background: #DFACE5;
+    border-radius: 0;
     padding: 24px;
     display: flex;
     gap: 24px;
@@ -118,19 +122,19 @@ h1 {
     width: 120px;
     height: 180px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .book-cover-placeholder {
     flex-shrink: 0;
     width: 120px;
     height: 180px;
-    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
-    border-radius: 8px;
+    background: #FEB3BA;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #DFACE5;
     font-size: 0.9rem;
     text-align: center;
     padding: 10px;
@@ -146,12 +150,12 @@ h1 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #222;
+    color: #FEB3BA;
 }
 
 .book-author {
     font-size: 1rem;
-    color: #666;
+    color: #FEB3BA;
     margin-bottom: 15px;
 }
 
@@ -166,14 +170,12 @@ h1 {
 
 .star {
     display: inline-block;
-}
-
-.star.filled-pink {
     color: #FEB3BA;
 }
 
+.star.filled-pink,
 .star.filled-purple {
-    color: #DFACE5;
+    color: #FEB3BA;
 }
 
 .star.empty {
@@ -183,7 +185,7 @@ h1 {
 .book-blurb {
     font-size: 0.95rem;
     line-height: 1.7;
-    color: #444;
+    color: #FEB3BA;
     font-style: italic;
 }
 
@@ -205,7 +207,7 @@ h1 {
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
 
@@ -213,7 +215,7 @@ h1 {
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    color: #999;
+    color: #DFACE5;
 }
 
 .empty-state p {
