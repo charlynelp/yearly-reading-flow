@@ -1,4 +1,10 @@
 module.exports = async (req, res) => {
+
+    module.exports = async (req, res) => {
+    // DEBUG: Log all environment variables
+    console.log('All available env vars:', Object.keys(process.env));
+    console.log('Number of env vars:', Object.keys(process.env).length);
+    
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
