@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
     // Only allow POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -14,10 +14,12 @@ export default async function handler(req, res) {
 
         // Get GitHub credentials from environment variables
         const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-        const GITHUB_REPO = process.env.GITHUB_REPO; // format: "username/repo-name"
+        const GITHUB_REPO = process.env.GITHUB_REPO;
         
         if (!GITHUB_TOKEN || !GITHUB_REPO) {
             console.error('Missing GitHub credentials');
+            console.error('GITHUB_TOKEN exists:', !!GITHUB_TOKEN);
+            console.error('GITHUB_REPO exists:', !!GITHUB_REPO);
             return res.status(500).json({ error: 'Server configuration error' });
         }
 
@@ -42,7 +44,6 @@ export default async function handler(req, res) {
                 currentBooks = JSON.parse(content);
             }
         } catch (error) {
-            // If file doesn't exist, start with empty array
             console.log('books.json does not exist yet, creating new file');
         }
 
@@ -66,7 +67,7 @@ export default async function handler(req, res) {
             body: JSON.stringify({
                 message: commitMessage,
                 content: base64Content,
-                sha: currentSha // Required for updates, undefined for new files
+                sha: currentSha
             })
         });
 
@@ -86,4 +87,4 @@ export default async function handler(req, res) {
         console.error('Error in add-book handler:', error);
         return res.status(500).json({ error: 'Internal server error' });
     }
-}
+};
