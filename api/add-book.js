@@ -13,8 +13,13 @@ module.exports = async (req, res) => {
         }
 
         // Get GitHub credentials from environment variables
-        const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
         const GITHUB_REPO = process.env.GITHUB_REPO;
+        
+        console.log('All env vars:', Object.keys(process.env));
+        console.log('GITHUB_TOKEN exists:', !!GITHUB_TOKEN);
+        console.log('GITHUB_REPO exists:', !!GITHUB_REPO);
+        console.log('GITHUB_REPO value:', GITHUB_REPO);
         
         if (!GITHUB_TOKEN || !GITHUB_REPO) {
             console.error('Missing GitHub credentials');
