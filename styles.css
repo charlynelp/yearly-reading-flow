@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #F2F0EF;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Year Tabs */
+.year-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.year-tab {
+    padding: 10px 24px;
+    background: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    transition: all 0.3s ease;
+}
+
+.year-tab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.year-tab.active {
+    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
+    color: white;
+}
+
+/* Books Grid */
+.books-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.book-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.book-cover {
+    flex-shrink: 0;
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-cover-placeholder {
+    flex-shrink: 0;
+    width: 120px;
+    height: 180px;
+    background: linear-gradient(135deg, #FEB3BA, #DFACE5);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.book-rating {
+    margin-bottom: 15px;
+}
+
+.stars {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.star {
+    display: inline-block;
+}
+
+.star.filled-pink {
+    color: #FEB3BA;
+}
+
+.star.filled-purple {
+    color: #DFACE5;
+}
+
+.star.empty {
+    color: #ddd;
+}
+
+.book-blurb {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .book-card {
+        flex-direction: column;
+    }
+    
+    .book-cover,
+    .book-cover-placeholder {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+}

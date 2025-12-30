@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book - Reading Flow</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .login-form,
+        .add-book-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-weight: 500;
+            color: #222;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        textarea {
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #FEB3BA;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #FEB3BA, #DFACE5);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .search-results {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .book-result {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: #F2F0EF;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .book-result:hover {
+            background: #e8e6e5;
+        }
+
+        .result-cover {
+            width: 60px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .result-info {
+            flex: 1;
+        }
+
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .result-author {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .result-pages {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error-message,
+        .success-message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            background: #fee;
+            color: #c33;
+        }
+
+        .success-message {
+            background: #efe;
+            color: #3a3;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 8px;
+            font-size: 2rem;
+        }
+
+        .star-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #ddd;
+            transition: color 0.2s;
+        }
+
+        .star-button.selected-pink {
+            color: #FEB3BA;
+        }
+
+        .star-button.selected-purple {
+            color: #DFACE5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #FEB3BA;
+        }
+
+        .selected-book {
+            background: #F2F0EF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .selected-book-display {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .selected-cover {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <a href="/" class="back-link">← Back to Reading List</a>
+        
+        <h1 style="text-align: center; margin-bottom: 30px;">Add Book</h1>
+
+        <!-- Login Form -->
+        <div id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter admin password">
+            </div>
+            <button onclick="login()">Login</button>
+            <div id="loginError" class="error-message hidden"></div>
+        </div>
+
+        <!-- Add Book Form -->
+        <div id="addBookForm" class="hidden">
+            <div id="message"></div>
+
+            <!-- Search Step -->
+            <div id="searchStep">
+                <div class="form-group">
+                    <label for="searchQuery">Search for Book (Title or ISBN)</label>
+                    <input type="text" id="searchQuery" placeholder="e.g., Tomorrow and Tomorrow and Tomorrow">
+                </div>
+                <button onclick="searchBook()">Search</button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <!-- Details Step -->
+            <div id="detailsStep" class="hidden">
+                <div class="selected-book">
+                    <div class="selected-book-display">
+                        <img id="selectedCover" class="selected-cover" src="" alt="">
+                        <div>
+                            <div id="selectedTitle" style="font-weight: 600; margin-bottom: 4px;"></div>
+                            <div id="selectedAuthor" style="color: #666;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="add-book-form" onsubmit="addBook(event)">
+                    <div class="form-group">
+                        <label for="pages">Pages</label>
+                        <input type="number" id="pages" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <button type="button" class="star-button" onclick="setRating(1)">★</button>
+                            <button type="button" class="star-button" onclick="setRating(2)">★</button>
+                            <button type="button" class="star-button" onclick="setRating(3)">★</button>
+                            <button type="button" class="star-button" onclick="setRating(4)">★</button>
+                            <button type="button" class="star-button" onclick="setRating(5)">★</button>
+                        </div>
+                        <input type="hidden" id="rating" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="blurb">Your Thoughts</label>
+                        <textarea id="blurb" placeholder="Write your review or thoughts about the book..." required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitButton">Add Book</button>
+                    <button type="button" onclick="resetForm()">Start Over</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
