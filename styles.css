@@ -81,7 +81,7 @@ h1 {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    color: #feb3ba;
+    color: #f24455;
     transition: all 0.3s ease;
 }
 
@@ -91,7 +91,7 @@ h1 {
 }
 
 .year-tab.active {
-    background: #feb3ba;
+    background: #f24455;
     color: #ff94b2;
 }
 
@@ -129,7 +129,7 @@ h1 {
     flex-shrink: 0;
     width: 120px;
     height: 180px;
-    background: #feb3ba;
+    background: #f24455;
     border-radius: 0;
     display: flex;
     align-items: center;
@@ -150,12 +150,12 @@ h1 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #feb3ba;
+    color: #f24455;
 }
 
 .book-author {
     font-size: 1rem;
-    color: #feb3ba;
+    color: #f24455;
     margin-bottom: 15px;
 }
 
@@ -170,12 +170,12 @@ h1 {
 
 .star {
     display: inline-block;
-    color: #feb3ba;
+    color: #f24455;
 }
 
 .star.filled-pink,
 .star.filled-purple {
-    color: #feb3ba;
+    color: #f24455;
 }
 
 .star.empty {
@@ -185,7 +185,7 @@ h1 {
 .book-blurb {
     font-size: 0.95rem;
     line-height: 1.7;
-    color: #feb3ba;
+    color: #f24455;
     font-style: italic;
 }
 
