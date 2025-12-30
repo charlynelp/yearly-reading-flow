@@ -7,7 +7,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: #f24455;
-    color: #dface5;
+    color: #ff94b2;
     line-height: 1.6;
 }
 
@@ -26,7 +26,7 @@ h1 {
     font-family: "BBH Bartle", sans-serif;
     font-size: 4rem;
     font-weight: 700;
-    color: #dface5;
+    color: ##ff94b2;
 }
 
 /* Current Year Display */
@@ -34,7 +34,7 @@ h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
-    color: #dface5;
+    color: ##ff94b2;
     margin-bottom: 20px;
 }
 
@@ -53,14 +53,14 @@ h1 {
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #dface5;
+    color: #ff94b2;
 }
 
 .stat-label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #dface5;
+    color: #ff94b2;
     margin-top: 5px;
 }
 
@@ -75,7 +75,7 @@ h1 {
 
 .year-tab {
     padding: 10px 24px;
-    background: #dface5;
+    background: #ff94b2;
     border: none;
     border-radius: 0;
     cursor: pointer;
@@ -92,7 +92,7 @@ h1 {
 
 .year-tab.active {
     background: #feb3ba;
-    color: #dface5;
+    color: #ff94b2;
 }
 
 /* Books Grid */
@@ -103,7 +103,7 @@ h1 {
 }
 
 .book-card {
-    background: #dface5;
+    background: #ff94b2;
     border-radius: 0;
     padding: 24px;
     display: flex;
@@ -134,7 +134,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #DFACE5;
+    color: #ff94b2;
     font-size: 0.9rem;
     text-align: center;
     padding: 10px;
@@ -215,7 +215,7 @@ h1 {
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    color: #DFACE5;
+    color: #ff94b2;
 }
 
 .empty-state p {
