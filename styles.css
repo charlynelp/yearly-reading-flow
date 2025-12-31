@@ -342,3 +342,30 @@ h1 {
     font-size: 1.1rem;
 }
 
+.share-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fff4ec;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #36382e;
+}
+
+.share-button:hover {
+    background: #36382e;
+    color: #fff4ec;
+    transform: scale(1.1);
+}
+
+.share-button svg {
+    width: 20px;
+    height: 20px;
+}
