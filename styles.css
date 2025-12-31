@@ -259,9 +259,9 @@ h1 {
     }
     
     .stats {
-        flex-direction: column;
-        gap: 15px;
-    }
+    flex-direction: row;
+    gap: 20px;
+}
     
     .year-tabs {
         grid-template-columns: repeat(3, 1fr);
