@@ -82,10 +82,10 @@ function displayBooks(year) {
     const minPages = Math.min(...pageCounts);
     
     bookshelf.innerHTML = yearBooks.map((book, index) => {
-        // Calculate proportional height (min 180px, max 280px - less variation)
+      // Calculate proportional height (min 240px, max 260px - very minimal variation)
         const pages = book.pages || 200;
-        const heightRange = 100; // 280 - 180
-        const height = 180 + ((pages - minPages) / (maxPages - minPages || 1)) * heightRange;
+        const heightRange = 20; // 260 - 240
+        const height = 240 + ((pages - minPages) / (maxPages - minPages || 1)) * heightRange;
         
         // Rotate through grey shades
         const bgColor = greyShades[index % greyShades.length];
