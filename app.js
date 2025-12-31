@@ -81,23 +81,21 @@ function displayBooks(year) {
     const maxPages = Math.max(...pageCounts);
     const minPages = Math.min(...pageCounts);
     
-    bookshelf.innerHTML = yearBooks.map((book, index) => {
-      // Calculate proportional height (min 240px, max 260px - very minimal variation)
+ bookshelf.innerHTML = yearBooks.map((book, index) => {
+        // Calculate proportional height
         const pages = book.pages || 200;
-        const heightRange = 20; // 260 - 240
+        const heightRange = 20;
         const height = 240 + ((pages - minPages) / (maxPages - minPages || 1)) * heightRange;
-        
-        // Rotate through grey shades
-        const bgColor = greyShades[index % greyShades.length];
+        const width = height * 0.67; // Standard book cover ratio
         
         return `
-            <div class="book-spine" 
-                 style="height: ${height}px; background: ${bgColor};" 
+            <div class="book-cover-card" 
+                 style="height: ${height}px; width: ${width}px;" 
                  onclick='openPopup(${JSON.stringify(book)})'>
-               <div class="spine-text">
-                    <div class="spine-author">${book.author}</div>
-                    <div class="spine-title">${book.title}</div>
-                </div>
+                ${book.coverUrl 
+                    ? `<img src="${book.coverUrl}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">` 
+                    : `<div style="width: 100%; height: 100%; background: #999; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; text-align: center; padding: 10px;">No Cover</div>`
+                }
             </div>
         `;
     }).join('');
