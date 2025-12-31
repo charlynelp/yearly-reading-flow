@@ -71,6 +71,7 @@ function displayBooks(year) {
       const message = year === 'all' ? 'No books added yet.' : 'No books read in ' + year + ' yet.';
 bookshelf.innerHTML = '<div class="empty-state"><p>' + message + '</p></div>';
         return;
+        }
     
     // Sort by date added (most recent first)
     yearBooks.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
