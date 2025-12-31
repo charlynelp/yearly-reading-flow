@@ -95,13 +95,13 @@ bookshelf.innerHTML = '<div class="empty-state"><p>' + message + '</p></div>';
             <div class="book-cover-card" 
                  style="height: ${height}px; width: ${width}px;" 
                  onclick='openPopup(${JSON.stringify(book).replace(/'/g, "&apos;")})'
-                ${book.coverUrl 
-                    ? `<img src="${book.coverUrl}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">` 
-                    : `<div style="width: 100%; height: 100%; background: #999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 10px;">
-                        <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; text-align: center;">${book.title}</div>
-                        <div style="font-size: 0.7rem; opacity: 0.9; text-align: center;">${book.author}</div>
-                       </div>`
-                }
+               ${book.coverUrl 
+    ? `<img src="${book.coverUrl}" alt="${book.title.replace(/"/g, '&quot;')}" style="width: 100%; height: 100%; object-fit: cover;">` 
+    : `<div style="width: 100%; height: 100%; background: #999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 10px;">
+        <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; text-align: center;">${book.title.replace(/"/g, '&quot;')}</div>
+        <div style="font-size: 0.7rem; opacity: 0.9; text-align: center;">${book.author.replace(/"/g, '&quot;')}</div>
+       </div>`
+}
             </div>
         `;
     }).join('');
