@@ -1,10 +1,4 @@
 module.exports = async (req, res) => {
-
-    module.exports = async (req, res) => {
-    // DEBUG: Log all environment variables
-    console.log('All available env vars:', Object.keys(process.env));
-    console.log('Number of env vars:', Object.keys(process.env).length);
-    
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -61,4 +55,30 @@ module.exports = async (req, res) => {
             method: 'PUT',
             headers: {
                 'Authorization': `token ${GITHUB_TOKEN}`,
-                'Accept': 'appli
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: commitMessage,
+                content: base64Content,
+                sha: currentSha
+            })
+        });
+
+        if (!updateResponse.ok) {
+            const errorData = await updateResponse.json();
+            console.error('GitHub API error:', errorData);
+            return res.status(500).json({ error: 'Failed to update GitHub repository' });
+        }
+
+        return res.status(200).json({ 
+            success: true, 
+            message: 'Book added successfully',
+            book: bookData
+        });
+
+    } catch (error) {
+        console.error('Error in add-book handler:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+};
