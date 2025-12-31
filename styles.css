@@ -305,3 +305,16 @@ h1 {
 .empty-state p {
     font-size: 1.1rem;
 }
+
+@media (max-width: 600px) {
+    /* ... existing mobile styles ... */
+    
+    h1 {
+        font-size: 2.5rem;
+        padding: 0 10px; /* Match the year-tabs padding */
+    }
+    
+    .container {
+        padding: 20px 10px;
+    }
+}
