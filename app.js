@@ -22,17 +22,17 @@ function getYears() {
 
 // Render year tabs
 function renderYearTabs() {
-    const years = getYears();
     const tabsContainer = document.getElementById('yearTabs');
     
-    if (years.length === 0) {
-        tabsContainer.innerHTML = '';
-        return;
+    // Create array of all years from 2025 down to 2015
+    const allYears = [];
+    for (let year = 2025; year >= 2015; year--) {
+        allYears.push(year);
     }
     
     // Create All-time button + year buttons
     const allTimeButton = `<button class="year-tab ${currentYear === 'all' ? 'active' : ''}" onclick="switchYear('all')">All-time</button>`;
-    const yearButtons = years.map(year => `
+    const yearButtons = allYears.map(year => `
         <button class="year-tab ${year === currentYear ? 'active' : ''}" onclick="switchYear(${year})">
             ${year}
         </button>
