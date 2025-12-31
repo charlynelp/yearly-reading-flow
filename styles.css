@@ -235,10 +235,49 @@ h1 {
     font-style: italic;
 }
 
+
 /* Responsive */
 @media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 20px 10px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .current-year {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .year-tabs {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .year-tab {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
     .bookshelf {
         gap: 10px;
+        justify-content: center;
     }
     
     .popup-content {
@@ -253,15 +292,6 @@ h1 {
         width: 100%;
         height: auto;
         max-height: 300px;
-    }
-    
-    .stats {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    h1 {
-        font-size: 3rem;
     }
 }
 
