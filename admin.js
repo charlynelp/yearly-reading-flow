@@ -134,16 +134,16 @@ async function addBook(event) {
     submitButton.disabled = true;
     submitButton.textContent = 'Adding...';
     
-    const bookData = {
-        title: selectedBook.title,
-        author: selectedBook.author,
-        pages: parseInt(document.getElementById('pages').value),
-        rating: selectedRating,
-        blurb: document.getElementById('blurb').value,
-        coverUrl: selectedBook.coverUrl,
-        year: new Date().getFullYear(),
-        dateAdded: new Date().toISOString()
-    };
+const bookData = {
+    title: selectedBook.title,
+    author: selectedBook.author,
+    pages: parseInt(document.getElementById('pages').value),
+    rating: selectedRating,
+    blurb: document.getElementById('blurb').value,
+    coverUrl: selectedBook.coverUrl,
+    year: parseInt(document.getElementById('year').value),
+    dateAdded: new Date().toISOString()
+};
     
     try {
         const response = await fetch('/api/add-book', {
