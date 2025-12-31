@@ -11,37 +11,43 @@
 </head>
 <body>
     <div class="container">
-       <header>
-    <h1>Reading Flow</h1>
-</header>
+        <header>
+            <h1>Reading Flow</h1>
+        </header>
 
-<!-- Year Tabs -->
-<div class="year-tabs" id="yearTabs"></div>
-
-<!-- Stats Section -->
-<div class="stats" id="stats">
-    ...
-</div>
-
+        <!-- Year Tabs -->
         <div class="year-tabs" id="yearTabs"></div>
 
-        <div class="bookshelf" id="bookshelf"></div>
+        <!-- Stats Section -->
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="booksCount">0</div>
+                <div class="stat-label">Books</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="pagesCount">0</div>
+                <div class="stat-label">Pages</div>
+            </div>
+        </div>
 
-        <!-- Book Detail Popup -->
-        <div class="popup-overlay" id="popupOverlay">
-            <div class="popup-content">
-                <button class="close-button" id="closeButton">×</button>
-                <div class="popup-body">
-                    <div class="popup-cover-container">
-                        <img id="popupCover" class="popup-cover" src="" alt="">
-                    </div>
-                    <div class="popup-details">
-                        <h2 id="popupTitle" class="popup-title"></h2>
-                        <div id="popupAuthor" class="popup-author"></div>
-                        <div id="popupRating" class="popup-rating"></div>
-                        <div id="popupPages" class="popup-pages"></div>
-                        <div id="popupBlurb" class="popup-blurb"></div>
-                    </div>
+        <!-- Bookshelf -->
+        <div class="bookshelf" id="bookshelf"></div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="close-button" id="closeButton">×</button>
+            <div class="popup-body">
+                <div class="popup-cover-container">
+                    <img id="popupCover" class="popup-cover" src="" alt="">
+                </div>
+                <div class="popup-details">
+                    <h2 class="popup-title" id="popupTitle"></h2>
+                    <p class="popup-author" id="popupAuthor"></p>
+                    <div class="popup-rating" id="popupRating"></div>
+                    <p class="popup-pages" id="popupPages"></p>
+                    <p class="popup-blurb" id="popupBlurb"></p>
                 </div>
             </div>
         </div>
@@ -49,4 +55,3 @@
 
     <script src="app.js"></script>
 </body>
-</html>
