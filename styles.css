@@ -41,7 +41,7 @@ header {
 }
 
 .search-bar::placeholder {
-    color: #DFACE5;
+    color: #36382e;
     opacity: 0.7;
 }
 
@@ -276,8 +276,21 @@ h1 {
         padding: 20px 10px;
     }
     
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
     h1 {
         font-size: 2.5rem;
+    }
+    
+    .search-bar {
+        position: static;
+        width: calc(100% - 20px);
+        margin: 0;
     }
     
     .current-year {
@@ -285,17 +298,17 @@ h1 {
     }
     
     .stat-number {
-    font-size: 3rem; /* Make it bigger on mobile */
-}
+        font-size: 3rem;
+    }
 
-.stat-label {
-    font-size: 1rem; /* Make the label bigger too */
-}
+    .stat-label {
+        font-size: 1rem;
+    }
     
     .stats {
         flex-direction: row;
-        gap: 60px;
-        padding: 0 10px; /* Add this */
+        gap: 40px;
+        padding: 0 10px;
     }
     
     .year-tabs {
@@ -313,7 +326,7 @@ h1 {
     .bookshelf {
         gap: 10px;
         justify-content: center;
-        padding: 20px 10px; /* Add this - same padding as year-tabs */
+        padding: 20px 10px;
     }
     
     .popup-content {
