@@ -94,9 +94,9 @@ function displayBooks(year) {
             <div class="book-spine" 
                  style="height: ${height}px; background: ${bgColor};" 
                  onclick='openPopup(${JSON.stringify(book)})'>
-                <div class="spine-text">
-                    <div class="spine-title">${book.title}</div>
+               <div class="spine-text">
                     <div class="spine-author">${book.author}</div>
+                    <div class="spine-title">${book.title}</div>
                 </div>
             </div>
         `;
