@@ -10,6 +10,8 @@ body {
     background: #fff4ec;
     color: #36382e;
     line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%; 
 }
 
 .container {
@@ -70,8 +72,9 @@ h1 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto 40px auto;
+    padding: 0 10px; 
 }
 
 .year-tab {
