@@ -7,8 +7,8 @@
 body {
     font-family: "Manrope", sans-serif;
     font-weight: 400;
-    background: #FEB3BA;
-    color: #DFACE5;
+    background: #fff4ec;
+    color: #36382e;
     line-height: 1.6;
 }
 
@@ -27,7 +27,7 @@ h1 {
     font-family: "Manrope", sans-serif;
     font-size: 4rem;
     font-weight: 600;
-    color: #DFACE5;
+    color: #36382e;
 }
 
 /* Current Year Display */
@@ -35,7 +35,7 @@ h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
-    color: #DFACE5;
+    color: #36382e;
     margin-bottom: 20px;
 }
 
@@ -54,14 +54,14 @@ h1 {
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #DFACE5;
+    color: #36382e;
 }
 
 .stat-label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #DFACE5;
+    color: #36382e;
     margin-top: 5px;
 }
 
@@ -76,7 +76,7 @@ h1 {
 
 .year-tab {
     padding: 10px 24px;
-    background: #DFACE5;
+    background: #36382e;
     border: none;
     border-radius: 0;
     cursor: pointer;
@@ -93,7 +93,7 @@ h1 {
 
 .year-tab.active {
     background: #FEB3BA;
-    color: #DFACE5;
+    color: #36382e;
 }
 
 /* Bookshelf */
@@ -269,7 +269,7 @@ h1 {
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    color: #DFACE5;
+    color: #36382e;
 }
 
 .empty-state p {
