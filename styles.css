@@ -259,9 +259,10 @@ h1 {
     }
     
     .stats {
-    flex-direction: row;
-    gap: 20px;
-}
+        flex-direction: row;
+        gap: 20px;
+        padding: 0 10px; /* Add this */
+    }
     
     .year-tabs {
         grid-template-columns: repeat(3, 1fr);
@@ -278,6 +279,7 @@ h1 {
     .bookshelf {
         gap: 10px;
         justify-content: center;
+        padding: 20px 10px; /* Add this - same padding as year-tabs */
     }
     
     .popup-content {
@@ -306,15 +308,3 @@ h1 {
     font-size: 1.1rem;
 }
 
-@media (max-width: 600px) {
-    /* ... existing mobile styles ... */
-    
-    h1 {
-        font-size: 2.5rem;
-        padding: 0 10px; /* Match the year-tabs padding */
-    }
-    
-    .container {
-        padding: 20px 10px;
-    }
-}
