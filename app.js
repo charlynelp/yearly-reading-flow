@@ -24,11 +24,11 @@ function getYears() {
 function renderYearTabs() {
     const tabsContainer = document.getElementById('yearTabs');
     
-    // Create array of all years from 2026 down to 2015
-    const allYears = [];
-    for (let year = 2026; year >= 2015; year--) {
-        allYears.push(year);
-    }
+  // Create array of all years from 2026 down to 2010
+const allYears = [];
+for (let year = 2026; year >= 2010; year--) {
+    allYears.push(year);
+}
     
     // Create All-time button + year buttons
     const allTimeButton = `<button class="year-tab ${currentYear === 'all' ? 'active' : ''}" onclick="switchYear('all')">All-time</button>`;
