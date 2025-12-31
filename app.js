@@ -47,10 +47,12 @@ function switchYear(year) {
     displayBooks(year);
     
     
-    // Update active tab
+   // Update active tab
     document.querySelectorAll('.year-tab').forEach(tab => {
         tab.classList.remove('active');
-        if (parseInt(tab.textContent) === year) {
+        if (year === 'all' && tab.textContent === 'All-time') {
+            tab.classList.add('active');
+        } else if (parseInt(tab.textContent) === year) {
             tab.classList.add('active');
         }
     });
@@ -58,7 +60,7 @@ function switchYear(year) {
 
 // Display books for selected year
 function displayBooks(year) {
-    const yearBooks = allBooks.filter(book => book.year === year);
+    const yearBooks = year === 'all' ? allBooks : allBooks.filter(book => book.year === year);
     const bookshelf = document.getElementById('bookshelf');
     
     
@@ -66,9 +68,9 @@ function displayBooks(year) {
     updateStats(yearBooks);
     
     if (yearBooks.length === 0) {
-        bookshelf.innerHTML = '<div class="empty-state"><p>No books read in ' + year + ' yet.</p></div>';
+      const message = year === 'all' ? 'No books added yet.' : 'No books read in ' + year + ' yet.';
+bookshelf.innerHTML = '<div class="empty-state"><p>' + message + '</p></div>';
         return;
-    }
     
     // Sort by date added (most recent first)
     yearBooks.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
