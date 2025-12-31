@@ -47,7 +47,7 @@ header {
 
 .search-bar:focus {
     outline: none;
-    border-color: #DFACE5;
+    border-color: #ff5a5f;
     background: rgba(223, 172, 229, 0.1);
 }
 
