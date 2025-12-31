@@ -18,5 +18,15 @@
     "coverUrl": null,
     "year": 2025,
     "dateAdded": "2025-12-30T04:00:00Z"
+  },
+  {
+    "title": "Bible",
+    "author": "Bible",
+    "pages": 1,
+    "rating": 5,
+    "blurb": "test",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12707846-M.jpg",
+    "year": 2024,
+    "dateAdded": "2025-12-31T03:58:01.921Z"
   }
 ]
