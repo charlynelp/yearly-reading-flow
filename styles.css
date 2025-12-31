@@ -82,7 +82,7 @@ h1 {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    color: #FEB3BA;
+    color: #6db1bf;
     transition: all 0.3s ease;
 }
 
@@ -92,8 +92,8 @@ h1 {
 }
 
 .year-tab.active {
-    background: #FEB3BA;
-    color: #36382e;
+    background: #ff5a5f;
+    color: #fff4ec;
 }
 
 /* Bookshelf */
