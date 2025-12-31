@@ -154,7 +154,19 @@ const bookData = {
             body: JSON.stringify(bookData)
         });
         
-        const result = await response.json();
+        const responseText = await response.text();
+        console.log('Server response:', responseText);
+        
+        let result;
+        try {
+            result = JSON.parse(responseText);
+        } catch (e) {
+            console.error('Failed to parse response:', responseText);
+            showMessage('Server error: ' + responseText, 'error');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Add Book';
+            return;
+        }
         
         if (response.ok) {
             showMessage('Book added successfully! Redirecting...', 'success');
