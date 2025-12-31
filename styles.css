@@ -255,8 +255,12 @@ h1 {
     }
     
     .stat-number {
-        font-size: 2rem;
-    }
+    font-size: 3rem; /* Make it bigger on mobile */
+}
+
+.stat-label {
+    font-size: 1rem; /* Make the label bigger too */
+}
     
     .stats {
         flex-direction: row;
