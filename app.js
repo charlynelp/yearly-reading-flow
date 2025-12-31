@@ -181,3 +181,22 @@ function updateStats(books) {
 
 // Initialize
 loadBooks();
+
+// Search functionality
+document.getElementById('searchBar').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const bookCards = document.querySelectorAll('.book-cover-card');
+    
+    bookCards.forEach(card => {
+        const bookData = card.getAttribute('onclick');
+        const isMatch = bookData.toLowerCase().includes(searchTerm);
+        card.style.display = isMatch ? 'block' : 'none';
+    });
+    
+    // Update stats for visible books
+    const visibleBooks = allBooks.filter(book => 
+        book.title.toLowerCase().includes(searchTerm) || 
+        book.author.toLowerCase().includes(searchTerm)
+    );
+    updateStats(visibleBooks);
+});
