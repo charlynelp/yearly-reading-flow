@@ -67,11 +67,11 @@ h1 {
 
 /* Year Tabs */
 .year-tabs {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
 }
 
 .year-tab {
