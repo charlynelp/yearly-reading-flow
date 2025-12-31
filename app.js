@@ -94,7 +94,7 @@ bookshelf.innerHTML = '<div class="empty-state"><p>' + message + '</p></div>';
         return `
             <div class="book-cover-card" 
                  style="height: ${height}px; width: ${width}px;" 
-                 onclick='openPopup(${JSON.stringify(book)})'>
+                 onclick='openPopup(${JSON.stringify(book).replace(/'/g, "&apos;")})'
                 ${book.coverUrl 
                     ? `<img src="${book.coverUrl}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">` 
                     : `<div style="width: 100%; height: 100%; background: #999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 10px;">
