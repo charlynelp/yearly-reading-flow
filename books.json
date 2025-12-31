@@ -98,5 +98,35 @@
     "coverUrl": "https://covers.openlibrary.org/b/id/14724951-M.jpg",
     "year": 2024,
     "dateAdded": "2025-12-31T04:45:38.235Z"
-  }
+  },
+   {
+    "title": "Multi",
+    "author": "Veronique Boisjoly",
+    "pages": 226,
+    "rating": 3,
+    "blurb": "Intéressant de lire sur le concept de personne à multi potentiel et multi intérêts, mais j'aurais aimé explorer plus le 'pourquoi' que le 'comment'.",
+    "coverUrl": "https://m.media-amazon.com/images/I/71+ror3pNDL._SL1500_.jpg",
+    "year": 2024,
+    "dateAdded": "2025-12-31T04:45:38.235Z"
+  },
+   {
+    "title": "Ecrire un roman: Comment devenir écrivain, écrire un livre et le faire publier",
+    "author": "Marie Vareille",
+    "pages": 147,
+    "rating": 3,
+    "blurb": "On sait JAMAIS! haha Super intéressant tout de même!",
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1506844154i/36333583.jpg",
+    "year": 2024,
+    "dateAdded": "2025-12-31T04:45:38.235Z"
+  },
+    {
+    "title": "Qimmik",
+    "author": "Michel Jean",
+    "pages": 240,
+    "rating": 3,
+    "blurb": "Bien mais j'ai beaucoup  moins embarqué que Kukum du même auteur.",
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1696674090i/199308548.jpg",
+    "year": 2024,
+    "dateAdded": "2025-12-31T04:45:38.235Z"
+  },
 ]
