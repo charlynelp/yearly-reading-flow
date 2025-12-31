@@ -115,7 +115,7 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    padding: 20px 8px;
+    padding: 35px 12px;
 }
 
 .book-spine:hover {
