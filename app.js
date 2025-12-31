@@ -46,8 +46,6 @@ function switchYear(year) {
     currentYear = year;
     displayBooks(year);
     
-    // Update year display
-    document.getElementById('currentYearDisplay').textContent = year;
     
     // Update active tab
     document.querySelectorAll('.year-tab').forEach(tab => {
@@ -63,8 +61,6 @@ function displayBooks(year) {
     const yearBooks = allBooks.filter(book => book.year === year);
     const bookshelf = document.getElementById('bookshelf');
     
-    // Update year display
-    document.getElementById('currentYearDisplay').textContent = year;
     
     // Update stats
     updateStats(yearBooks);
