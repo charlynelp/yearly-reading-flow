@@ -29,7 +29,7 @@
     "year": 2025,
     "dateAdded": "2025-12-31T04:21:24.103Z"
   },
-    {
+  {
     "title": "Le mensonge du siècle, Anatomie d'une bavure médiatique et judiciaire",
     "author": "Daniel Proulx",
     "pages": 275,
@@ -68,5 +68,15 @@
     "coverUrl": "https://covers.openlibrary.org/b/id/14538012-M.jpg",
     "year": 2025,
     "dateAdded": "2025-12-31T04:33:03.819Z"
+  },
+  {
+    "title": "Klara and the Sun",
+    "author": "Kazuo Ishiguro",
+    "pages": 303,
+    "rating": 4,
+    "blurb": "Really enjoyed it. Easy read, felt victorian-west andersony (?) in my imagination and I found it rather pleasant! ",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10648686-M.jpg",
+    "year": 2024,
+    "dateAdded": "2025-12-31T04:41:51.589Z"
   }
 ]
