@@ -73,9 +73,19 @@ bookshelf.innerHTML = '<div class="empty-state"><p>' + message + '</p></div>';
         return;
         }
     
-    // Sort by date added (most recent first)
+    // Sort books
+if (year === 'all') {
+    // For All-time: sort by year (most recent first), then by date added within each year
+    yearBooks.sort((a, b) => {
+        if (b.year !== a.year) {
+            return b.year - a.year; // Sort by year descending
+        }
+        return new Date(b.dateAdded) - new Date(a.dateAdded); // Then by date added
+    });
+} else {
+    // For specific years: sort by date added (most recent first)
     yearBooks.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
-    
+}
     // Grey shades for book spines
     const greyShades = ['#333333', '#555555', '#777777', '#999999', '#BBBBBB'];
     
