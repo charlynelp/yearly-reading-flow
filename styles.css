@@ -6,8 +6,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #f24455;
-    color: #ff94b2;
+    background: #FEB3BA;
+    color: #DFACE5;
     line-height: 1.6;
 }
 
@@ -26,7 +26,7 @@ h1 {
     font-family: "BBH Bartle", sans-serif;
     font-size: 4rem;
     font-weight: 700;
-    color: ##ff94b2;
+    color: #DFACE5;
 }
 
 /* Current Year Display */
@@ -34,7 +34,7 @@ h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
-    color: ##ff94b2;
+    color: #DFACE5;
     margin-bottom: 20px;
 }
 
@@ -53,14 +53,14 @@ h1 {
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #ff94b2;
+    color: #DFACE5;
 }
 
 .stat-label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ff94b2;
+    color: #DFACE5;
     margin-top: 5px;
 }
 
@@ -75,13 +75,13 @@ h1 {
 
 .year-tab {
     padding: 10px 24px;
-    background: #ff94b2;
+    background: #DFACE5;
     border: none;
     border-radius: 0;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    color: #f24455;
+    color: #FEB3BA;
     transition: all 0.3s ease;
 }
 
@@ -91,114 +91,194 @@ h1 {
 }
 
 .year-tab.active {
-    background: #f24455;
-    color: #ff94b2;
+    background: #FEB3BA;
+    color: #DFACE5;
 }
 
-/* Books Grid */
-.books-grid {
+/* Bookshelf */
+.bookshelf {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: flex-end;
+    padding: 20px 0;
+    min-height: 300px;
 }
 
-.book-card {
-    background: #ff94b2;
-    border-radius: 0;
-    padding: 24px;
-    display: flex;
-    gap: 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-}
-
-.book-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
-}
-
-.book-cover {
-    flex-shrink: 0;
-    width: 120px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 0;
-}
-
-.book-cover-placeholder {
-    flex-shrink: 0;
-    width: 120px;
-    height: 180px;
-    background: #f24455;
-    border-radius: 0;
+.book-spine {
+    width: 60px;
+    min-height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff94b2;
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 15px 5px;
 }
 
-.book-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.book-spine:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.book-title {
-    font-size: 1.5rem;
+.spine-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 5px;
-    color: #f24455;
+    color: #fff;
+    text-align: center;
+    line-height: 1.3;
 }
 
-.book-author {
-    font-size: 1rem;
-    color: #f24455;
+.spine-title {
+    margin-bottom: 10px;
+}
+
+.spine-author {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Popup Modal */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background: #f5f5f5;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.close-button:hover {
+    background: #000;
+}
+
+.popup-body {
+    display: flex;
+    gap: 30px;
+}
+
+.popup-cover-container {
+    flex-shrink: 0;
+}
+
+.popup-cover {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+}
+
+.popup-details {
+    flex: 1;
+}
+
+.popup-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.popup-author {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.popup-rating {
     margin-bottom: 15px;
 }
 
-.book-rating {
-    margin-bottom: 15px;
+.popup-rating .stars {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
 }
 
-.stars {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+.popup-rating .star {
+    color: #333;
 }
 
-.star {
-    display: inline-block;
-    color: #f24455;
+.popup-rating .star.empty {
+    color: #ccc;
 }
 
-.star.filled-pink,
-.star.filled-purple {
-    color: #f24455;
-}
-
-.star.empty {
-    color: #ddd;
-}
-
-.book-blurb {
+.popup-pages {
     font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.popup-blurb {
+    font-size: 1rem;
     line-height: 1.7;
-    color: #f24455;
+    color: #444;
     font-style: italic;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-    .book-card {
+    .book-spine {
+        width: 50px;
+        min-height: 120px;
+    }
+    
+    .spine-text {
+        font-size: 0.75rem;
+    }
+    
+    .popup-content {
+        padding: 30px 20px;
+    }
+    
+    .popup-body {
         flex-direction: column;
     }
     
-    .book-cover,
-    .book-cover-placeholder {
+    .popup-cover {
         width: 100%;
-        height: 250px;
+        height: auto;
+        max-height: 300px;
     }
     
     .stats {
@@ -215,7 +295,7 @@ h1 {
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    color: #ff94b2;
+    color: #DFACE5;
 }
 
 .empty-state p {

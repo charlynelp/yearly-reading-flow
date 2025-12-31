@@ -57,7 +57,7 @@ function switchYear(year) {
 // Display books for selected year
 function displayBooks(year) {
     const yearBooks = allBooks.filter(book => book.year === year);
-    const booksGrid = document.getElementById('booksGrid');
+    const bookshelf = document.getElementById('bookshelf');
     
     // Update year display
     document.getElementById('currentYearDisplay').textContent = year;
@@ -66,30 +66,79 @@ function displayBooks(year) {
     updateStats(yearBooks);
     
     if (yearBooks.length === 0) {
-        booksGrid.innerHTML = '<div class="empty-state"><p>No books read in ' + year + ' yet.</p></div>';
+        bookshelf.innerHTML = '<div class="empty-state"><p>No books read in ' + year + ' yet.</p></div>';
         return;
     }
     
     // Sort by date added (most recent first)
     yearBooks.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
     
-    booksGrid.innerHTML = yearBooks.map(book => `
-        <div class="book-card">
-            ${book.coverUrl 
-                ? `<img src="${book.coverUrl}" alt="${book.title} cover" class="book-cover">` 
-                : `<div class="book-cover-placeholder">${book.title}</div>`
-            }
-            <div class="book-info">
-                <div class="book-title">${book.title}</div>
-                <div class="book-author">${book.author}</div>
-                <div class="book-rating">
-                    ${renderStars(book.rating)}
+    // Grey shades for book spines
+    const greyShades = ['#333333', '#555555', '#777777', '#999999', '#BBBBBB'];
+    
+    // Find max and min page counts for height calculation
+    const pageCounts = yearBooks.map(b => b.pages || 200);
+    const maxPages = Math.max(...pageCounts);
+    const minPages = Math.min(...pageCounts);
+    
+    bookshelf.innerHTML = yearBooks.map((book, index) => {
+        // Calculate proportional height (min 150px, max 400px)
+        const pages = book.pages || 200;
+        const heightRange = 250; // 400 - 150
+        const height = 150 + ((pages - minPages) / (maxPages - minPages || 1)) * heightRange;
+        
+        // Rotate through grey shades
+        const bgColor = greyShades[index % greyShades.length];
+        
+        return `
+            <div class="book-spine" 
+                 style="height: ${height}px; background: ${bgColor};" 
+                 onclick='openPopup(${JSON.stringify(book)})'>
+                <div class="spine-text">
+                    <div class="spine-title">${book.title}</div>
+                    <div class="spine-author">${book.author}</div>
                 </div>
-                <div class="book-blurb">${book.blurb}</div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
+
+// Open popup with book details
+function openPopup(book) {
+    const overlay = document.getElementById('popupOverlay');
+    
+    // Set popup content
+    if (book.coverUrl) {
+        document.getElementById('popupCover').src = book.coverUrl;
+        document.getElementById('popupCover').style.display = 'block';
+    } else {
+        document.getElementById('popupCover').style.display = 'none';
+    }
+    
+    document.getElementById('popupTitle').textContent = book.title;
+    document.getElementById('popupAuthor').textContent = book.author;
+    document.getElementById('popupRating').innerHTML = renderStars(book.rating);
+    document.getElementById('popupPages').textContent = book.pages ? `${book.pages} pages` : 'Page count unknown';
+    document.getElementById('popupBlurb').textContent = book.blurb;
+    
+    // Show popup
+    overlay.classList.add('active');
+}
+
+// Close popup
+function closePopup() {
+    document.getElementById('popupOverlay').classList.remove('active');
+}
+
+// Close button click
+document.getElementById('closeButton').addEventListener('click', closePopup);
+
+// Click outside popup to close
+document.getElementById('popupOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closePopup();
+    }
+});
 
 // Render stars - all red
 function renderStars(rating) {

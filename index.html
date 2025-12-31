@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>My Yearly Reading Flow</h1>
+            <h1>Reading Flow</h1>
         </header>
 
         <div class="current-year" id="currentYearDisplay">2025</div>
@@ -30,7 +30,26 @@
 
         <div class="year-tabs" id="yearTabs"></div>
 
-        <div class="books-grid" id="booksGrid"></div>
+        <div class="bookshelf" id="bookshelf"></div>
+
+        <!-- Book Detail Popup -->
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-content">
+                <button class="close-button" id="closeButton">×</button>
+                <div class="popup-body">
+                    <div class="popup-cover-container">
+                        <img id="popupCover" class="popup-cover" src="" alt="">
+                    </div>
+                    <div class="popup-details">
+                        <h2 id="popupTitle" class="popup-title"></h2>
+                        <div id="popupAuthor" class="popup-author"></div>
+                        <div id="popupRating" class="popup-rating"></div>
+                        <div id="popupPages" class="popup-pages"></div>
+                        <div id="popupBlurb" class="popup-blurb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
