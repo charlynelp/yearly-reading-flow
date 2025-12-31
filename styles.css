@@ -23,6 +23,32 @@ body {
 header {
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.search-bar {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 8px 12px;
+    border: 1px solid #DFACE5;
+    background: transparent;
+    color: #DFACE5;
+    border-radius: 20px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.9rem;
+    width: 200px;
+}
+
+.search-bar::placeholder {
+    color: #DFACE5;
+    opacity: 0.7;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #DFACE5;
+    background: rgba(223, 172, 229, 0.1);
 }
 
 h1 {
