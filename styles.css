@@ -264,7 +264,7 @@ h1 {
     
     .stats {
         flex-direction: row;
-        gap: 20px;
+        gap: 40px;
         padding: 0 10px; /* Add this */
     }
     
