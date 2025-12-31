@@ -30,11 +30,15 @@ function renderYearTabs() {
         return;
     }
     
-    tabsContainer.innerHTML = years.map(year => `
+    // Create All-time button + year buttons
+    const allTimeButton = `<button class="year-tab ${currentYear === 'all' ? 'active' : ''}" onclick="switchYear('all')">All-time</button>`;
+    const yearButtons = years.map(year => `
         <button class="year-tab ${year === currentYear ? 'active' : ''}" onclick="switchYear(${year})">
             ${year}
         </button>
     `).join('');
+    
+    tabsContainer.innerHTML = allTimeButton + yearButtons;
 }
 
 // Switch active year
