@@ -99,7 +99,7 @@
     "year": 2024,
     "dateAdded": "2025-12-31T04:45:38.235Z"
   },
-   {
+  {
     "title": "Multi",
     "author": "Veronique Boisjoly",
     "pages": 226,
@@ -109,7 +109,7 @@
     "year": 2024,
     "dateAdded": "2025-12-31T04:45:38.235Z"
   },
-   {
+  {
     "title": "Ecrire un roman: Comment devenir écrivain, écrire un livre et le faire publier",
     "author": "Marie Vareille",
     "pages": 147,
@@ -119,7 +119,7 @@
     "year": 2024,
     "dateAdded": "2025-12-31T04:45:38.235Z"
   },
-    {
+  {
     "title": "Qimmik",
     "author": "Michel Jean",
     "pages": 240,
@@ -128,5 +128,15 @@
     "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1696674090i/199308548.jpg",
     "year": 2024,
     "dateAdded": "2025-12-31T04:45:38.235Z"
+  },
+  {
+    "title": "It",
+    "author": "Alexa Chung",
+    "pages": 192,
+    "rating": 1,
+    "blurb": "Meh, felt like a long instagram post by someone cooler than you. ",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10326072-M.jpg",
+    "year": 2015,
+    "dateAdded": "2025-12-31T12:54:53.083Z"
   }
 ]
