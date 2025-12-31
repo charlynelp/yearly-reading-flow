@@ -4,7 +4,7 @@ let currentYear = new Date().getFullYear();
 // Load books data
 async function loadBooks() {
     try {
-        const response = await fetch('/books.json');
+        const response = await fetch('/books.json?t=' + new Date().getTime());
         allBooks = await response.json();
         renderYearTabs();
         displayBooks(currentYear);
