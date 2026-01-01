@@ -20,42 +20,62 @@ function getYears() {
     return years.sort((a, b) => b - a); // Most recent first
 }
 
-// Render year tabs
+// Render year dropdown
 function renderYearTabs() {
-    const tabsContainer = document.getElementById('yearTabs');
+    const menuContainer = document.getElementById('yearDropdownMenu');
     
-  // Create array of all years from 2026 down to 2010
-const allYears = [];
-for (let year = 2026; year >= 2010; year--) {
-    allYears.push(year);
-}
+    // Create array of all years from 2026 down to 2010
+    const allYears = [];
+    for (let year = 2026; year >= 2010; year--) {
+        allYears.push(year);
+    }
     
-    // Create All-time button + year buttons
-    const allTimeButton = `<button class="year-tab ${currentYear === 'all' ? 'active' : ''}" onclick="switchYear('all')">All-time</button>`;
-    const yearButtons = allYears.map(year => `
-        <button class="year-tab ${year === currentYear ? 'active' : ''}" onclick="switchYear(${year})">
-            ${year}
-        </button>
+    // Create All-time option + year options
+    const allTimeOption = `<div class="year-option" onclick="selectYear('all')">All-time</div>`;
+    const yearOptions = allYears.map(year => `
+        <div class="year-option" onclick="selectYear(${year})">${year}</div>
     `).join('');
     
-    tabsContainer.innerHTML = allTimeButton + yearButtons;
+    menuContainer.innerHTML = allTimeOption + yearOptions;
 }
 
-// Switch active year
-function switchYear(year) {
-    currentYear = year;
-    displayBooks(year);
+// Toggle dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.getElementById('yearDropdownBtn');
+    const dropdownMenu = document.getElementById('yearDropdownMenu');
     
-    
-   // Update active tab
-    document.querySelectorAll('.year-tab').forEach(tab => {
-        tab.classList.remove('active');
-        if (year === 'all' && tab.textContent === 'All-time') {
-            tab.classList.add('active');
-        } else if (parseInt(tab.textContent) === year) {
-            tab.classList.add('active');
-        }
+    dropdownBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdownBtn.classList.toggle('active');
+        dropdownMenu.classList.toggle('active');
     });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        dropdownBtn.classList.remove('active');
+        dropdownMenu.classList.remove('active');
+    });
+});
+
+// Select year from dropdown
+function selectYear(year) {
+    currentYear = year;
+    
+    // Update button text
+    const displayText = year === 'all' ? 'All-time' : year;
+    document.getElementById('selectedYear').textContent = displayText;
+    
+    // Close dropdown
+    document.getElementById('yearDropdownBtn').classList.remove('active');
+    document.getElementById('yearDropdownMenu').classList.remove('active');
+    
+    // Display books for selected year
+    displayBooks(year);
+}
+
+// Keep the old switchYear for compatibility but make it call selectYear
+function switchYear(year) {
+    selectYear(year);
 }
 
 // Display books for selected year
