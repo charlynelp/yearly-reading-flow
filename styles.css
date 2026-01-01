@@ -27,9 +27,8 @@ header {
 }
 
 .search-bar {
-    position: absolute;
-    top: 20px;
-    right: 0;
+    display: block;
+    margin: 20px auto 0 auto;  /* Center it */
     padding: 8px 12px;
     border: 1px solid #36382e;
     background: transparent;
@@ -37,7 +36,7 @@ header {
     border-radius: 20px;
     font-family: "Manrope", sans-serif;
     font-size: 0.9rem;
-    width: 160px;
+    width: 250px;  /* Slightly wider since it's centered */
 }
 
 .search-bar::placeholder {
