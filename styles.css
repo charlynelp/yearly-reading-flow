@@ -138,7 +138,7 @@ h1 {
     left: 0;
     right: 0;
     margin-top: 5px;
-    background: ##36382e;
+    background: #36382e;
     border-radius: 15px;
     max-height: 300px;
     overflow-y: auto;
@@ -313,7 +313,7 @@ h1 {
 .quote {
     font-size: 1.1rem;
     font-style: italic;
-    color: ##36382e;
+    color: #36382e;
     opacity: 0.9;
     margin-top: 15px;
     line-height: 1.6;
@@ -387,10 +387,10 @@ h1 {
     }
     
     
-    .year-selector {
-        max-width: calc(100% - 20px);
-        padding: 0 10px;
-    }
+  .year-selector {
+    max-width: 200px;  /* Changed from calc(100% - 20px) to keep it small */
+    padding: 0 10px;
+}
 }
     
     .bookshelf {
