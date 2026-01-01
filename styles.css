@@ -103,7 +103,7 @@ h1 {
 .year-dropdown-btn {
     width: 100%;
     padding: 12px 20px;
-    background: #FF5A5F;
+    background: #36382e;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -138,7 +138,7 @@ h1 {
     left: 0;
     right: 0;
     margin-top: 5px;
-    background: #DFACE5;
+    background: ##36382e;
     border-radius: 15px;
     max-height: 300px;
     overflow-y: auto;
@@ -152,7 +152,7 @@ h1 {
 
 .year-option {
     padding: 12px 20px;
-    color: #FEB3BA;
+    color: #FFF4EC;
     cursor: pointer;
     transition: background 0.2s ease;
     font-size: 1rem;
