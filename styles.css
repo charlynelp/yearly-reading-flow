@@ -93,36 +93,81 @@ h1 {
     margin-top: 5px;
 }
 
-/* Year Tabs */
-.year-tabs {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    max-width: 650px;
+/* Year Selector Dropdown */
+.year-selector {
+    position: relative;
+    max-width: 200px;
     margin: 0 auto 40px auto;
-    padding: 0 10px; 
 }
 
-.year-tab {
-    padding: 10px 24px;
-    background: #36382e;
+.year-dropdown-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: #DFACE5;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
+    font-family: "Manrope", sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #fff4ec;
+    color: #FEB3BA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: all 0.3s ease;
 }
 
-.year-tab:hover {
+.year-dropdown-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.year-tab.active {
-    background: #ff5a5f;
-    color: #fff4ec;
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.year-dropdown-btn.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.year-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    background: #DFACE5;
+    border-radius: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.year-dropdown-menu.active {
+    display: block;
+}
+
+.year-option {
+    padding: 12px 20px;
+    color: #FEB3BA;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 1rem;
+}
+
+.year-option:hover {
+    background: rgba(254, 179, 186, 0.1);
+}
+
+.year-option:first-child {
+    border-radius: 15px 15px 0 0;
+}
+
+.year-option:last-child {
+    border-radius: 0 0 15px 15px;
 }
 
 /* Bookshelf */
