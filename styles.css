@@ -386,10 +386,12 @@ h1 {
         padding: 0 10px;
     }
     
-    .year-tab {
-        padding: 8px 12px;
-        font-size: 0.9rem;
+    
+    .year-selector {
+        max-width: calc(100% - 20px);
+        padding: 0 10px;
     }
+}
     
     .bookshelf {
         gap: 10px;
