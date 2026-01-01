@@ -103,14 +103,14 @@ h1 {
 .year-dropdown-btn {
     width: 100%;
     padding: 12px 20px;
-    background: #DFACE5;
+    background: #FF5A5F;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     font-family: "Manrope", sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #FEB3BA;
+    color: #FFF4EC;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -313,7 +313,7 @@ h1 {
 .quote {
     font-size: 1.1rem;
     font-style: italic;
-    color: #DFACE5;
+    color: ##36382e;
     opacity: 0.9;
     margin-top: 15px;
     line-height: 1.6;
