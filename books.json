@@ -2540,16 +2540,6 @@
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
-    "title": "The Little Prince",
-    "author": "Antoine de Saint-Exupéry",
-    "pages": 96,
-    "rating": 5,
-    "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780152023980-L.jpg",
-    "year": 2010,
-    "dateAdded": "2015-01-01T00:00:00Z"
-  },
-  {
     "title": "The Alchemist",
     "author": "Paulo Coelho",
     "pages": 182,
@@ -2635,7 +2625,7 @@
     "pages": 129,
     "rating": 3,
     "blurb": "",
-    "coverUrl": null,
+    "coverUrl": "https://m.media-amazon.com/images/I/71JUJ6pGoIL._AC_UF1000,1000_QL80_.jpg",
     "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
@@ -2645,8 +2635,8 @@
     "pages": 320,
     "rating": 3,
     "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781496417558-L.jpg",
-    "year": 2015,
+    "coverUrl": "https://m.media-amazon.com/images/I/91hqKz6RCmL.jpg",
+    "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2656,7 +2646,7 @@
     "rating": 3,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780738213248-L.jpg",
-    "year": 2015,
+    "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2665,8 +2655,8 @@
     "pages": 327,
     "rating": 3,
     "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780316322409-L.jpg",
-    "year": 2015,
+    "coverUrl": "https://m.media-amazon.com/images/I/61GRX9YKWOL._AC_UF1000,1000_QL80_.jpg",
+    "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2676,7 +2666,7 @@
     "rating": 3,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781603586153-L.jpg",
-    "year": 2015,
+    "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2686,17 +2676,17 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781844089147-L.jpg",
-    "year": 2015,
+    "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
     "title": "The Art of Being a Well-Dressed Wife",
     "author": "Anne Fogarty",
     "pages": 144,
-    "rating": 3,
+    "rating": 2,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781851776306-L.jpg",
-    "year": 2015,
+    "year": 2018,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2706,7 +2696,7 @@
     "rating": 3,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782070408504-L.jpg",
-    "year": 2015,
+    "year": 2010,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2716,7 +2706,7 @@
     "rating": 3,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782864248453-L.jpg",
-    "year": 2015,
+    "year": 2011,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2725,7 +2715,7 @@
     "pages": 512,
     "rating": 5,
     "blurb": "",
-    "coverUrl": null,
+    "coverUrl": "https://m.media-amazon.com/images/I/716E6dQ4BXL._AC_UF1000,1000_QL80_.jpg",
     "year": 2015,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
@@ -2735,8 +2725,8 @@
     "pages": 1130,
     "rating": 3,
     "blurb": "",
-    "coverUrl": null,
-    "year": 2015,
+    "coverUrl": https://images.adsttc.com/media/images/57a0/c3fe/e58e/ce72/e600/022f/large_jpg/open-uri20160802-32221-jtxkqh.jpg?1470153722,
+    "year": 2010,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2745,8 +2735,8 @@
     "pages": 89,
     "rating": 5,
     "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780985750923-L.jpg",
-    "year": 2015,
+    "coverUrl": "https://m.media-amazon.com/images/I/81SkfJaCUyL.jpg",
+    "year": 2014,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2765,7 +2755,7 @@
     "pages": 256,
     "rating": 5,
     "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062125712-L.jpg",
+    "coverUrl": "https://m.media-amazon.com/images/I/81i7fwHXquL._AC_UF1000,1000_QL80_.jpg",
     "year": 2015,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
@@ -2775,7 +2765,7 @@
     "pages": 208,
     "rating": 3,
     "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782940411078-L.jpg",
+    "coverUrl": "https://m.media-amazon.com/images/I/81XzypEhxGL._UF1000,1000_QL80_.jpg",
     "year": 2015,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
@@ -2786,7 +2776,7 @@
     "rating": 3,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781422118924-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2796,7 +2786,7 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780300122237-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2806,7 +2796,7 @@
     "rating": 3,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780262134743-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2816,7 +2806,7 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780262701150-L.jpg",
-    "year": 2015,
+    "year": 2014,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2826,7 +2816,7 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400064281-L.jpg",
-    "year": 2015,
+    "year": 2014,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2836,7 +2826,7 @@
     "rating": 4,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788492643561-L.jpg",
-    "year": 2015,
+    "year": 2014,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2846,7 +2836,7 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781933820330-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2856,7 +2846,7 @@
     "rating": 4,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780061766084-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2866,7 +2856,7 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780897331531-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2876,7 +2866,7 @@
     "rating": 5,
     "blurb": "",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9789063692568-L.jpg",
-    "year": 2015,
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   },
   {
@@ -2885,8 +2875,8 @@
     "pages": 192,
     "rating": 2,
     "blurb": "",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781846147548-L.jpg",
-    "year": 2015,
+    "coverUrl": "https://m.media-amazon.com/images/I/918PtfQ2yiL._AC_UF894,1000_QL80_.jpg",
+    "year": 2013,
     "dateAdded": "2015-01-01T00:00:00Z"
   }
 ]
