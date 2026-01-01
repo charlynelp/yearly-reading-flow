@@ -347,7 +347,6 @@ h1 {
         font-size: 2.5rem;
     }
 
-        }
     
     .quote {
         font-size: 0.95rem;
@@ -390,7 +389,6 @@ h1 {
   .year-selector {
     max-width: 200px;  /* Changed from calc(100% - 20px) to keep it small */
     padding: 0 10px;
-}
 }
     
     .bookshelf {
