@@ -102,6 +102,7 @@ function selectBook(book) {
     if (book.pages && book.pages !== 'Unknown') {
         document.getElementById('pages').value = book.pages;
     }
+    
 }
 
 // Set star rating
@@ -118,7 +119,8 @@ function setRating(rating) {
             const colorIndex = index % 2;
             star.classList.add(`selected-${colors[colorIndex]}`);
         }
-    });
+        document.getElementById('year').value = new Date().getFullYear();
+    }
 }
 
 // Add book to collection
