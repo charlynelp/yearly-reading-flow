@@ -1,3 +1,4 @@
+```js
 let selectedBook = null;
 let selectedRating = 0;
 
@@ -32,7 +33,6 @@ async function searchBook() {
     resultsDiv.innerHTML = '<p>Searching...</p>';
     
     try {
-        // Try searching by title first
         const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=5`);
         const data = await response.json();
         
@@ -85,11 +85,9 @@ function displayResults(books) {
 function selectBook(book) {
     selectedBook = book;
     
-    // Hide search step, show details step
     document.getElementById('searchStep').classList.add('hidden');
     document.getElementById('detailsStep').classList.remove('hidden');
     
-    // Populate selected book display
     if (book.coverUrl) {
         document.getElementById('selectedCover').src = book.coverUrl;
     } else {
@@ -98,17 +96,16 @@ function selectBook(book) {
     document.getElementById('selectedTitle').textContent = book.title;
     document.getElementById('selectedAuthor').textContent = book.author;
     
-    // Pre-fill pages if available
     if (book.pages && book.pages !== 'Unknown') {
         document.getElementById('pages').value = book.pages;
     }
-    
 }
 
 // Set star rating
 function setRating(rating) {
     selectedRating = rating;
     document.getElementById('rating').value = rating;
+    document.getElementById('year').value = new Date().getFullYear();
     
     const stars = document.querySelectorAll('.star-button');
     const colors = ['pink', 'purple'];
@@ -119,8 +116,7 @@ function setRating(rating) {
             const colorIndex = index % 2;
             star.classList.add(`selected-${colors[colorIndex]}`);
         }
-        document.getElementById('year').value = new Date().getFullYear();
-    }
+    });
 }
 
 // Add book to collection
@@ -136,16 +132,16 @@ async function addBook(event) {
     submitButton.disabled = true;
     submitButton.textContent = 'Adding...';
     
-const bookData = {
-    title: selectedBook.title,
-    author: selectedBook.author,
-    pages: parseInt(document.getElementById('pages').value),
-    rating: selectedRating,
-    blurb: document.getElementById('blurb').value,
-    coverUrl: selectedBook.coverUrl,
-    year: parseInt(document.getElementById('year').value),
-    dateAdded: new Date().toISOString()
-};
+    const bookData = {
+        title: selectedBook.title,
+        author: selectedBook.author,
+        pages: parseInt(document.getElementById('pages').value),
+        rating: selectedRating,
+        blurb: document.getElementById('blurb').value,
+        coverUrl: selectedBook.coverUrl,
+        year: parseInt(document.getElementById('year').value),
+        dateAdded: new Date().toISOString()
+    };
     
     try {
         const response = await fetch('/api/add-book', {
@@ -234,3 +230,4 @@ document.getElementById('password')?.addEventListener('keypress', function(e) {
         login();
     }
 });
+```
