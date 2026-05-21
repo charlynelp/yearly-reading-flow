@@ -3,6 +3,11 @@ module.exports = async (req, res) => {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
+    const password = req.headers.authorization?.replace('Bearer ', '');
+    if (password !== process.env.ADMIN_PASSWORD) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
     try {
         const bookData = req.body;
         
