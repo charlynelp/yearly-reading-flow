@@ -1,24 +1,35 @@
-```js
 let selectedBook = null;
 let selectedRating = 0;
 
 // Login function
-function login() {
+async function login() {
     const password = document.getElementById('password').value;
-    const correctPassword = 'Osheaga2020!';
-    
-    if (password === correctPassword) {
-        document.getElementById('loginForm').classList.add('hidden');
-        document.getElementById('addBookForm').classList.remove('hidden');
-        sessionStorage.setItem('authenticated', 'true');
-    } else {
-        const error = document.getElementById('loginError');
-        error.textContent = 'Incorrect password';
-        error.classList.remove('hidden');
+    const loginError = document.getElementById('loginError');
+    loginError.classList.add('hidden');
+
+    try {
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password })
+        });
+
+        if (response.ok) {
+            sessionStorage.setItem('authenticated', 'true');
+            sessionStorage.setItem('adminPassword', password);
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('addBookForm').classList.remove('hidden');
+        } else {
+            loginError.textContent = 'Incorrect password';
+            loginError.classList.remove('hidden');
+        }
+    } catch (err) {
+        loginError.textContent = 'Login failed. Please try again.';
+        loginError.classList.remove('hidden');
     }
 }
 
-// Check if already authenticated
+// Check if already authenticated this session
 if (sessionStorage.getItem('authenticated') === 'true') {
     document.getElementById('loginForm').classList.add('hidden');
     document.getElementById('addBookForm').classList.remove('hidden');
@@ -147,7 +158,8 @@ async function addBook(event) {
         const response = await fetch('/api/add-book', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${sessionStorage.getItem('adminPassword')}`
             },
             body: JSON.stringify(bookData)
         });
@@ -230,4 +242,3 @@ document.getElementById('password')?.addEventListener('keypress', function(e) {
         login();
     }
 });
-```
